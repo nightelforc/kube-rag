@@ -14,6 +14,6 @@ func main() {
 		fmt.Fprintf(w, `{"status":"ok"}`)
 	})
 
-	fmt.Println("íº€ KubeRAG server started on :8080")
+	fmt.Println("KubeRAG server started on :8080")
 	http.ListenAndServe(":8080", nil)
 }
