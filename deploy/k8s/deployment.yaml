@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-rag
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kube-rag
+  template:
+    metadata:
+      labels:
+        app: kube-rag
+    spec:
+      containers:
+      - name: kube-rag
+        image: kube-rag:v0.1.0
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: "0.5"
+            memory: "512Mi"
